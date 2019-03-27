@@ -6,7 +6,7 @@ namespace ConsoleApp1
 {
     class WebScraper
     {
-        private const string TITLE_PATH = "/html/head/title";
+        private const string titlePath = "/html/head/title";
         static void Main(string[] args)
         {
             string[] urls = new string[] {"https://www.facebook.com/",
@@ -31,7 +31,7 @@ namespace ConsoleApp1
                 {
                     HtmlDocument htmlDoc = new HtmlWeb().Load(url);
                     Console.WriteLine("Try: " + (i + 1));
-                    return htmlDoc.DocumentNode.SelectSingleNode(TITLE_PATH).InnerHtml;
+                    return htmlDoc.DocumentNode.SelectSingleNode(titlePath).InnerHtml;
                 }
                 catch { Console.WriteLine("try: " + (i + 1)); }
             }
